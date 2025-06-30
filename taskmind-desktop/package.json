@@ -1,0 +1,59 @@
+{
+  "name": "taskmind-desktop",
+  "version": "1.0.0",
+  "description": "TaskMind Native macOS Desktop App",
+  "main": "dist/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "webpack serve --mode development",
+    "build": "webpack --mode production",
+    "electron-build": "electron-builder",
+    "release": "electron-builder --publish=always",
+    "dist": "electron-builder",
+    "deploy-functions": "./scripts/deploy-functions.sh",
+    "supabase:start": "supabase start",
+    "supabase:stop": "supabase stop",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "build": {
+    "appId": "com.taskmind.desktop",
+    "mac": {
+      "target": "dmg"
+    },
+    "publish": {
+      "provider": "github"
+    }
+  },
+  "keywords": [
+    "electron",
+    "react",
+    "taskmind",
+    "productivity"
+  ],
+  "author": "Vatsal Pandya",
+  "license": "MIT",
+  "dependencies": {
+    "@slack/web-api": "^7.0.4",
+    "@supabase/supabase-js": "^2.50.2",
+    "dotenv": "^17.0.0",
+    "openai": "^4.29.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.48",
+    "@types/react-dom": "^18.2.18",
+    "autoprefixer": "^10.4.16",
+    "electron": "^28.1.4",
+    "electron-builder": "^24.9.1",
+    "html-webpack-plugin": "^5.6.0",
+    "postcss": "^8.4.33",
+    "style-loader": "^3.3.4",
+    "tailwindcss": "^3.4.1",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.3.3",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  }
+}

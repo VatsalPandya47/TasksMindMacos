@@ -1,0 +1,36 @@
+[auth]
+enable_signup = true
+enable_email_signup = true
+enable_email_logins = true
+
+[auth.email]
+enable_signup = true
+double_confirm_changes = false
+enable_confirmations = false
+
+[auth.security]
+protect_against_brute_force_attacks = true
+
+[database]
+extensions = [
+    "uuid-ossp",
+    "pgcrypto"
+]
+
+[edge_functions]
+enable_edge_functions = true
+deploy_local_functions = true
+
+[storage]
+enable_image_transformations = true
+image_transformation_max_width = 1920
+image_transformation_max_height = 1080
+
+[realtime]
+max_concurrent_users = 100
+max_events_per_second = 100
+
+[ai]
+provider = "openai"
+max_tokens = 300
+model = "gpt-4o" 
