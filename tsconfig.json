@@ -1,0 +1,48 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "lib": ["DOM", "DOM.Iterable", "ES6"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": false,
+    "jsx": "react-jsx",
+    "module": "ESNext",
+    "declaration": false,
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+  "include": [
+    "src/main/**/*",
+    "src/preload/**/*",
+    "src/renderer/**/*",
+    "src/config/environment.ts",
+    "src/types/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "src/hooks/**/*",
+    "src/lib/**/*",
+    "src/services/SlackService.ts",
+    "src/services/OpenAIService.ts",
+    "src/services/ZoomService.ts",
+    "src/services/ZoomOAuthService.ts",
+    "src/components/Dashboard.tsx",
+    "src/contexts/**/*",
+    "src/config.ts"
+  ],
+  "ts-node": {
+    "esm": true
+  }
+}

@@ -27,6 +27,32 @@ export class SlackService {
     this.channelId = environment.slackChannelId || '';
   }
 
+  async testConnection(): Promise<boolean> {
+    try {
+      await this.client.auth.test();
+      return true;
+    } catch (error) {
+      console.error('Slack connection test failed:', error);
+      return false;
+    }
+  }
+
+  async notifyWorkflow(data: any): Promise<void> {
+    const message = `🔄 **Workflow Update**\n${JSON.stringify(data, null, 2)}`;
+    await this.sendNotification({
+      text: message,
+      channel: this.channelId
+    });
+  }
+
+  async sendMeetingSummary(summary: string): Promise<void> {
+    const message = `📝 **Meeting Summary**\n${summary}`;
+    await this.sendNotification({
+      text: message,
+      channel: this.channelId
+    });
+  }
+
   async sendTaskNotification(task: TaskNotification): Promise<void> {
     const priorityEmoji = {
       low: '🟢',
@@ -54,4 +80,4 @@ export class SlackService {
       throw error;
     }
   }
-}
+} 

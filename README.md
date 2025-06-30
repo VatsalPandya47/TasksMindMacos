@@ -20,7 +20,7 @@
 
 ## 📖 Overview
 
-TaskMind is a native macOS desktop application that revolutionizes productivity by automatically extracting actionable tasks from your Zoom meetings using AI. Built with Electron and React, it seamlessly integrates with Zoom, Slack, and OpenAI to create an intelligent task management ecosystem.
+TaskMind is a revolutionary macOS desktop application featuring an **AI Copilot that acts as your invisible Chief of Staff** in meetings. It automatically listens to your conversations, detects questions about your work, and provides instant, accurate responses using GPT-4o and your task board data. Beyond meeting intelligence, it combines AI-powered task management with Zoom integration and Slack notifications for complete productivity automation.
 
 ### 🎯 What TaskMind Does
 
@@ -49,7 +49,14 @@ TaskMind is a native macOS desktop application that revolutionizes productivity 
 - **Status Updates**: Real-time notifications for task progress and completion
 - **Custom Channels**: Configure notifications for different teams and projects
 
-### 📋 **Task Management**
+### 🧠 **Real-Time AI Copilot** ⭐ NEW!
+- **Auto-Detection**: Recognizes questions in meetings like "What did we finish?" or "Any blockers?"
+- **GPT-4o Responses**: Provides instant, accurate answers based on your task board
+- **Floating Overlay**: Beautiful glassmorphism UI appears automatically with responses
+- **Global Hotkeys**: System-wide shortcuts for manual questions and control
+- **Meeting Intelligence**: Acts like an invisible Chief of Staff in every meeting
+
+## 📋 **Task Management**
 - **Kanban Board**: Drag-and-drop task management (Todo → In Progress → Done)
 - **Priority Levels**: Visual priority indicators and due date management
 - **Real-time Updates**: Live synchronization across all devices
@@ -144,6 +151,31 @@ TaskMind is a native macOS desktop application that revolutionizes productivity 
    ```bash
    npm start
    ```
+
+### Quick Launch (Pre-built)
+
+If you want to quickly run the desktop application without setting up the development environment:
+
+1. **Install Electron (if not already installed)**
+   ```bash
+   npm install electron
+   ```
+
+2. **Run the application**
+   ```bash
+   # Quick start (recommended)
+   ./start-app.sh
+   
+   # Or manually
+   ./node_modules/.bin/electron dist/main.js
+   ```
+
+The application will launch with a beautiful interface featuring:
+- ✨ Modern gradient UI design
+- 🚀 Interactive dashboard with quick actions
+- 📊 System information panel
+- 🔔 Native macOS notifications
+- 🔐 Secure Electron implementation
 
 ## 🔧 Setup Guide
 

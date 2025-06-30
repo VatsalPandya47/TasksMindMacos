@@ -1,0 +1,46 @@
+{
+  "name": "taskmind-desktop",
+  "version": "1.0.0",
+  "description": "AI-Powered Meeting Intelligence Desktop App",
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "npm run build:main && npm run build:preload && npm run build:renderer",
+    "build:main": "npx tsc src/main/main.ts --outDir dist --target es2020 --module commonjs --skipLibCheck --esModuleInterop",
+    "build:preload": "npx tsc src/preload/preload.ts --outDir dist --target es2020 --module commonjs --skipLibCheck --esModuleInterop",
+    "build:renderer": "npx esbuild src/renderer/index.tsx --bundle --outfile=dist/renderer.js --target=es2020 --format=iife --platform=browser",
+    "start": "npm run build && electron dist/main.js",
+    "dev": "npm run build && electron dist/main.js --inspect=5858",
+    "clean": "rm -rf dist",
+    "rebuild": "npm run clean && npm run build"
+  },
+  "keywords": [
+    "electron",
+    "react",
+    "typescript",
+    "ai",
+    "meeting",
+    "copilot"
+  ],
+  "author": "TaskMind Team",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "css-loader": "^7.1.2",
+    "electron": "^31.2.1",
+    "esbuild": "^0.23.0",
+    "html-webpack-plugin": "^5.6.0",
+    "style-loader": "^4.0.0",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.5.3",
+    "webpack": "^5.92.1",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "@slack/web-api": "^7.3.2",
+    "@supabase/supabase-js": "^2.44.4",
+    "openai": "^4.52.7",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}
